@@ -17,7 +17,7 @@ public class Hotel {
             if (count != 0) {
                 System.out.println("Next please:");
             }
-            System.out.println("What Hotel Will You Be Staying At?");
+            System.out.println("What Hotel Will You Be Staying At, Seaview, Grand or Majestic Hotel?");
             String hotelName = scanner.nextLine();
             if (hotelName.equals("Seaview") || hotelName.equals("seaview")) {
                 System.out.println("Please join queue 1");
