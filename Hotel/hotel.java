@@ -1,23 +1,30 @@
 import java.util.Scanner;
 
-public class Hotel {
+public class hotels {
     // main body which calls the methods
     public static void main(String[] args) {
-        double[] hotels = hotelName();
+        double users = users();
+        double[] hotels = hotelName(users);
         percent(hotels);
     }
+    public static double users(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("How many visitors are expected altogether?");
+        return scanner.nextDouble();
+
+    }
     // will ask for hotel name and return an array of all its variables
-    public static double[] hotelName() {
+    public static double[] hotelName(double users) {
         Scanner scanner = new Scanner(System.in);
         int count = 0;
         double seaview = 0;
         double grand = 0;
         double majestic = 0;
-        while (count != 1330) {
+        while (count != users + 1) {
             if (count != 0) {
                 System.out.println("Next please:");
             }
-            System.out.println("What Hotel Will You Be Staying At, Seaview, Grand or Majestic Hotel?");
+            System.out.println("What hotel will you be staying at? Seaview, Grand or Majestic Hotel?");
             String hotelName = scanner.nextLine();
             if (hotelName.equals("Seaview") || hotelName.equals("seaview")) {
                 System.out.println("Please join queue 1");
@@ -52,5 +59,5 @@ public class Hotel {
         System.out.println(grand+"% of travellers are staying in the Grand hotel");
         System.out.println(majestic+"% of travellers are staying in the Majestic hotel");
     }
-
 }
+
